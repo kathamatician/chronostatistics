@@ -1,0 +1,15 @@
+date,weekday,scheduled_time,arrival_time,delay_min,event_type,subject,weather,temperature_c,status,note
+2026-04-14,Tuesday,11:15,11:27,12,lunch,mensa,sunny,20,attended,
+2026-04-16,Thursday,10:15,10:29,14,lecture,functional_analysis,cloudy,14,attended,
+2026-04-21,Tuesday,12:15,12:28,13,lecture,functional_analysis,sunny,10,attended,
+2026-04-22,Wednesday,11:15,11:21,6,lunch,mensa,sunny,11,attended,
+2026-04-23,Thursday,10:15,,NA,lecture,functional_analysis,sunny,10,absent,no_show
+2026-04-27,Monday,16:00,16:00,0,meeting,project_management,cloudy,16,attended,on_time
+2026-04-28,Tuesday,12:15,12:31,16,lecture,functional_analysis,sunny,16,attended,
+2026-04-30,Thursday,10:15,,NA,lecture,functional_analysis,sunny,12,absent,attending_workshop
+2026-04-30,Thursday,16:30,17:11,41,bbq,tp2_bbq,sunny,20,attended,
+2026-05-04,Monday,14:15,14:22,7,lecture,Mathematica,cloudy,19,attended,
+2026-05-05,Tuesday,12:15,12:53,38,lecture,functional_analysis,drizzle,13,attended,
+2026-05-06,Wednesday,08:30,08:27,-3,exercise,functional_analysis_exercise,rain,9,attended,early_arrival
+2026-05-07,Thursday,10:15,10:22,7,lecture,functional_analysis,cloudy,10,attended,
+2026-05-08,Friday,16:15,16:16,1,exercise,Mathematica_exercise,cloudy,16,attended,
