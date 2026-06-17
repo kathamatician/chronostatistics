@@ -29,8 +29,8 @@ date,weekday,scheduled_time,arrival_time,delay_min,event_type,subject,weather,te
 2026-06-09,Tuesday,12:15,,NA,lecture,functional_analysis,cloudy,17,absent,
 2026-06-10,Wednesday,12:15,,NA,exercise,functional_analysis_exercise,cloudy,12,absent,
 2026-06-11,Thursday,10:15,,NA,lecture,functional_analysis,cloudy,17,absent,
-2026-06-12,Friday,14:15,14:15,0,exercise,Mathematica_exercise,cloudy,18,on_time,
-2026-06-15,Monday,14:15,14:15,0,lecture,Mathematica,cloudy,17,on_time
-2026-06-15,Monday,16:00,16:05,5,meeting,project_management,cloudy,18,attended
-2026-06-16,Tuesday,12:15,12:41,26,lecture,functional_analysis,cloudy,21,attended
-2026-06-17,Wednesday,8:30,,NA,exercise,functional_analysis_exercise,cloudy,18,overslept
+2026-06-12,Friday,14:15,14:15,0,exercise,Mathematica_exercise,cloudy,18,attended,on_time,
+2026-06-15,Monday,14:15,14:15,0,lecture,Mathematica,cloudy,17,attended,on_time,
+2026-06-15,Monday,16:00,16:05,5,meeting,project_management,cloudy,18,attended,
+2026-06-16,Tuesday,12:15,12:41,26,lecture,functional_analysis,cloudy,21,attended,
+2026-06-17,Wednesday,8:30,,NA,exercise,functional_analysis_exercise,cloudy,18,absent,overslept
