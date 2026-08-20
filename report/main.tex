@@ -214,9 +214,8 @@ the full catalog is
     P_{\mathrm{absent}} = \frac{22}{61} \simeq 36\%.
 \end{equation}
 Taken together, the probability that the subject both appears
-\emph{and} is not late is $6/61\simeq 10\%$. Extending the
-catalog by five weeks has not improved this rare-event rate;
-if anything, the vacuum has become slightly less accessible.
+\emph{and} is not late is $6/61\simeq 10\%$. This is the closest
+the dataset comes to a rare-event process.
 
 \begin{table}[H]
 \centering
@@ -248,7 +247,7 @@ $P(\text{present and not late})$ & $10\%$ \\
 
 A maximum-likelihood Gaussian fit to the attended sample yields
 $(\mu,\sigma)\simeq(13.3,12.6)$~min
-(Figs.~\ref{fig:histogram} and~\ref{fig:gauss}).
+(Figs.~\ref{fig:histogram}).
 
 The Gaussian description fails in two structurally important
 ways. First, it assigns appreciable probability to early arrivals
@@ -273,18 +272,6 @@ left of $\mu$.
     \label{fig:histogram}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{../plots/gaussian_fit.png}
-    \caption{
-        Density-normalized histogram and Gaussian fit
-        (\textit{quantum lateness model}).
-        The data prefer a sharper onset near $\Delta t=0$
-        than a symmetric Gaussian can provide.
-    }
-    \label{fig:gauss}
-\end{figure}
-
 \subsection{Exponential tail}
 
 Restricting to strictly positive delays ($n=33$), an exponential
@@ -296,8 +283,7 @@ model
 \end{equation}
 gives a fitted scale $\tau\simeq 14.8$~min
 (Fig.~\ref{fig:tail}), comparable to the mean of the positive
-subsample ($15.8$~min). Remarkably, this scale is stable under
-the addition of the June--July data. In this description,
+subsample ($15.8$~min). In this description,
 lateness is memoryless: conditional on not having arrived by
 time $t_0+t$, the expected additional wait is still of order a
 quarter of an hour. This is the statistical signature of a
@@ -416,12 +402,15 @@ A minimal effective description is therefore
     \Delta t_0
     + g_{\mathrm{FA}}\,\mathcal{O}_{\mathrm{FA}}
     + g_{12}\,\mathcal{O}_{12:15}
-    + \cdots,
+    + \cdots
 \end{equation}
-where $\mathcal{O}_{\mathrm{FA}}$ is an indicator for
-functional analysis and the two operators are, in the
-present design, almost collinear. A larger dataset would
-still be required to disentangle subject from clock time.
+Here $\Delta t_0$ is a baseline mean delay;
+$\mathcal{O}_{\mathrm{FA}},\mathcal{O}_{12:15}\in\{0,1\}$ 
+are indicators for functional analysis and the
+noon slot; and $g_{\mathrm{FA}}$, $g_{12}$ are the
+associated couplings in minutes.
+The two operators are almost collinear in this timetable,
+so subject and clock time cannot yet be separated.
 
 \subsection{Survival analysis}
 
@@ -468,8 +457,7 @@ However, the observed data exhibit a counterintuitive trend:
 rainy conditions are weakly associated with improved punctuality.
 
 The Pearson correlation between temperature and delay remains
-consistent with zero ($r\simeq -0.02$), even after the sample
-has been extended into a hotter July. Sunny attendances
+consistent with zero ($r\simeq -0.02$). Sunny attendances
 average $15.0$~min and include the barbecue;
 cloudy attendances average $12.5$~min. The only
 properly rainy attendance is still the unique early arrival
@@ -502,8 +490,7 @@ November.
     \includegraphics[width=\linewidth]{../plots/weather_scatter.png}
     \caption{
         Delay versus ambient temperature, colored by weather.
-        No linear thermal trend is visible, including in the
-        newly added high-temperature July points.
+        No linear thermal trend is visible.
         The isolated red point is the early-arrival rain
         event; the isolated green point is the
         $38$~min drizzle lecture.
@@ -515,48 +502,69 @@ November.
 \end{figure}
 
 % -------------------------------------------------
-\section{A phenomenological model}
+\section{A Phenomenological Model}
 % -------------------------------------------------
 
 The data motivate a minimal two-phase description.
 Let $p_0$ be the probability of remaining in the punctuality
-vacuum and $1-p_0$ the probability of tunneling into the
-late continuum. Then
+vacuum (the empirical rate $P(\Delta t\le 0)\simeq 0.15$)
+and $1-p_0$ the probability of tunneling into the late
+continuum. Write
 \begin{equation}
     \Delta t
     =
     \begin{cases}
       \varepsilon, & \text{with probability } p_0, \\[2pt]
-      \Delta t_{\min} + \tau\,\xi, & \text{otherwise},
+      \Delta t_{\min} + \tau\,\xi, & \text{otherwise}.
     \end{cases}
 \end{equation}
-where $\varepsilon$ is a narrow random variable supported
-near zero and $\xi\sim\mathrm{Exp}(1)$. Empirically
-$p_0\simeq 0.15$ and $\tau\simeq 15$~min.
-The vacuum probability has decreased relative to the first
-nine weeks; the tail scale has not.
+Here $\varepsilon$ is a narrow random variable supported
+near zero (in the sample, $\varepsilon\in\{-3,0\}$);
+$\Delta t_{\min}>0$ is a small offset for the onset of
+the late phase;
+$\tau\simeq 15$~min is the exponential scale fitted to
+positive delays;
+and $\xi\sim\mathrm{Exp}(1)$ is a unit exponential random
+variable, i.e.\ it has density $e^{-x}$ for $x>0$ and
+mean $1$. The product $\tau\xi$ is therefore an
+exponential delay with mean $\tau$.
 
 An equivalent field-theoretic cartoon is an asymmetric
 effective potential $V(\Delta t)$ with a shallow well at
 $\Delta t=0$ and a linear downhill slope for $\Delta t>0$.
 Once the well is left, there is no classical restoring
 force; arrival becomes a first-passage problem with
-constant hazard $1/\tau$. Reminders may be added
-perturbatively as
+constant hazard $1/\tau$.
+
+Reminders, if they were applied, could be added
+perturbatively. Let $R$ denote a reminder strength
+(for example a dimensionless count of messages, or an
+intensity in inverse minutes) and let $\alpha$ be the
+associated linear coupling, with expected sign
+$\alpha<0$. Then
 \begin{equation}
     \Delta t
     =
     \Delta t_0 + \alpha R + \mathcal{O}(R^2),
 \end{equation}
-with $\alpha<0$ the expected sign, but no controlled
-reminder protocol was implemented in this run.
+where $\Delta t_0$ is the delay in the absence of
+reminders. No controlled reminder protocol was implemented
+in this run, so $\alpha$ is not measured.
 
-The event-type dependence is encoded by letting $\tau$ and
-$p_0$ run with the appointment:
+The event-type dependence is encoded by letting the tail
+scale run with the appointment,
 \begin{equation}
-    \tau = \tau_0 + c_{\mathrm{FA}}\,\mathcal{O}_{\mathrm{FA}}
-          + c_{\mathrm{BBQ}}\,\mathcal{O}_{\mathrm{BBQ}}.
+    \tau
+    =
+    \tau_0
+    + c_{\mathrm{FA}}\,\mathcal{O}_{\mathrm{FA}}
+    + c_{\mathrm{BBQ}}\,\mathcal{O}_{\mathrm{BBQ}}.
 \end{equation}
+Here $\tau_0$ is a baseline scale,
+$\mathcal{O}_{\mathrm{FA}},\mathcal{O}_{\mathrm{BBQ}}\in\{0,1\}$
+are indicator functions for functional-analysis lectures
+and barbecues, and $c_{\mathrm{FA}}$, $c_{\mathrm{BBQ}}$
+are the corresponding shifts in $\tau$, in minutes.
 Fits of this form are underconstrained, yet the hierarchy
 $\tau_{\mathrm{FA}} > \tau_{\mathrm{lecture}}
 > \tau_{\mathrm{meeting}} \sim \tau_{\mathrm{exercise}}$
@@ -567,14 +575,11 @@ Friday Mathematica exercises are closer to the trivial
 (on-time) theory.
 
 A crude Bayesian forecast for a new event of type $s$ is
-then just the posterior predictive implied by the
-corresponding subsample. For a noon functional-analysis
-lecture one should budget $\langle\Delta t\rangle\simeq 28$~min
+the posterior predictive implied by the corresponding
+subsample. For a noon functional-analysis lecture one
+should budget $\langle\Delta t\rangle\simeq 28$~min
 and keep a heavy tail in mind. For a Friday exercise the
-prior is kinder. For the subject's birthday gathering we
-decline to publish a live prediction, on the grounds that
-the barbecue sector has $n=1$ and that functional analysis
-has since produced a larger residual.
+prior is kinder.
 
 % -------------------------------------------------
 \section{Discussion}
@@ -606,8 +611,7 @@ sample or a genuine rain-resonance.
 Two negative results are worth stating clearly.
 Temperature does not correlate with delay, so a simple
 thermal-activation picture of getting out of bed is not
-supported at the level of ambient Celsius, even after
-July.
+supported at the level of ambient Celsius.
 And social context does not automatically restore order:
 the barbecue is no longer the largest residual, but it
 is still not an ordered phase.
@@ -649,7 +653,6 @@ The data reject a symmetric Gaussian model of punctuality.
 The attended delay distribution is positively skewed, has
 mean $13.3$~min and median $12$~min, and is consistent
 with an exponential tail of scale $\tau\simeq 15$~min.
-That tail scale is unchanged by the June--July extension.
 Strict punctuality occurs in $15\%$ of attendances.
 An additional $36\%$ of scheduled events are no-shows,
 so the joint probability of presence and non-lateness is
@@ -671,16 +674,8 @@ reminder coupling, and an independent autumn-rain run
 will be required to decide whether a stable punctuality
 phase can ever be reached under laboratory conditions.
 
-Until then, the recommended practical protocol is
-straightforward. For a noon functional-analysis lecture,
-arrive prepared to wait half an hour, and bring a book
-in case the chair is empty. For a Friday exercise, hope
-is not yet a theoretical error. For a barbecue, light the
-grill and do not wait --- unless functional analysis is
-also on the menu.
-
 % -------------------------------------------------
-\section*{Outlook}
+\section{Outlook}
 % -------------------------------------------------
 
 The present work has been largely phenomenological: a catalogue of

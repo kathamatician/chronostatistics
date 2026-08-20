@@ -41,7 +41,15 @@ print("\n=== B. Probability Distribution ===")
 
 # 1. Combined Histogram + Gaussian + KDE (best version)
 plt.figure(figsize=(11, 7))
-sns.histplot(attended['delay_min'], kde=True, bins=15, color='royalblue', alpha=0.7, stat="density")
+sns.histplot(
+    attended['delay_min'],
+    bins=np.arange(-6, 48, 3),
+    kde=True,
+    color='royalblue',
+    alpha=0.7,
+    stat='density',
+)
+# sns.histplot(attended['delay_min'], kde=True, bins=15, color='royalblue', alpha=0.7, stat="density")
 x = np.linspace(attended['delay_min'].min()-5, attended['delay_min'].max()+5, 200)
 mu, std = norm.fit(attended['delay_min'])
 plt.plot(x, norm.pdf(x, mu, std), 'r-', lw=2.5, label=f'Gaussian Fit (μ={mu:.1f}, σ={std:.1f})')
