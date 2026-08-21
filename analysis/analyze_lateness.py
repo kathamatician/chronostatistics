@@ -41,7 +41,7 @@ print("\n=== B. Probability Distribution ===")
 
 # 1. Combined Histogram + Gaussian + KDE (best version)
 plt.figure(figsize=(11, 7))
-sns.histplot(
+ax = sns.histplot(
     attended['delay_min'],
     bins=np.arange(-6, 48, 3),
     kde=True,
@@ -49,6 +49,8 @@ sns.histplot(
     alpha=0.7,
     stat='density',
 )
+ax.lines[0].set_label('Kernel density estimate')
+
 # sns.histplot(attended['delay_min'], kde=True, bins=15, color='royalblue', alpha=0.7, stat="density")
 x = np.linspace(attended['delay_min'].min()-5, attended['delay_min'].max()+5, 200)
 mu, std = norm.fit(attended['delay_min'])
